@@ -43,7 +43,7 @@
   // Page setup.
   set page(
     background: image("assets/front-bg.jpg"),
-    margin: (left: 2cm, right: 1.5cm, top: 2cm, bottom: 6cm),
+    margin: (left: 2cm, right: 1.5cm, top: 2cm, bottom: 5cm),
     footer: [
       #if institute-logo != none {
         align(center)[#institute-logo]
@@ -57,30 +57,31 @@
   block(text(linguify("conducted_at", from: database) + [ #institute], fill: colors.psl), width: 10cm)
 
   // Thesis title.
-  v(1cm)
+  v(0.8cm)
   align(center)[
     #text([*#title*], size: 16pt)
   ]
 
   // Thesis author, doctoral school, specialty, and jury members.
-  v(0.5cm)
+  v(0.6cm)
 
   let make-jury-table = {
     set text(size: 11pt)
     table(
-      columns: (1fr, 0.6fr),
+      columns: (1fr, 0.7fr),
       stroke: none,
       align: (left, right),
       inset: 0cm,
-      row-gutter: 0.5cm,
+      row-gutter: (0.6em, 1.4em) * jury.len(),
       column-gutter: 1cm,
       ..jury
         .map(member => {
-            (
-              [#member.firstname #smallcaps([#member.lastname])\ #member.title],
-              [_#member.role _],
-            )
-          })
+          (
+            [#member.firstname #smallcaps([#member.lastname])],
+            [_#member.role _],
+            table.cell(colspan: 2)[#member.title],
+          )
+        })
         .flatten()
     )
   }
