@@ -43,7 +43,7 @@
   // Page setup.
   set page(
     background: image("assets/front-bg.jpg"),
-    margin: (left: 2cm, right: 1.5cm, top: 2cm, bottom: 5cm),
+    margin: (left: 2cm, right: 1.5cm, top: 2cm, bottom: 6cm),
     footer: [
       #if institute-logo != none {
         align(center)[#institute-logo]
