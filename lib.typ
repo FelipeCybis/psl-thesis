@@ -54,7 +54,7 @@
 
   // Institute name.
   v(5.6cm)
-  block(text(linguify("conducted_at", from: database) + [ #institute], fill: colors.psl), width: 10cm)
+  block(text(linguify("conducted_at", from: database) + [ #institute], fill: colors.psl), width: 15cm)
 
   // Thesis title.
   v(0.8cm)
