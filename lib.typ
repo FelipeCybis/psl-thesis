@@ -138,29 +138,32 @@
 
   set page(
     background: place(top + left, image("assets/back-bg.png")),
-    margin: (left: 2cm, right: 1.5cm, top: 2cm, bottom: 4.5cm),
+    margin: (left: 1.5cm, right: 2cm, top: 1.5cm, bottom: 1.5cm),
   )
 
   show heading: it => {
     set text(fill: colors.psl, weight: "light")
     block(smallcaps(it.body))
-    v(-0.5cm)
+    v(-0.6cm)
     line(length: 100%, stroke: colors.psl)
   }
 
   set par(justify: true)
+
   align(horizon)[
     #heading(level: 1, outlined: false)[Résumé]
-    #text(size: 0.9em)[#abstracts.fr]
+    #text(size: 0.85em)[#abstracts.fr]
+    #v(-0.9em)
 
-    #heading(level: 1, outlined: false)[Mots clés]
-    #text(size: 0.9em)[#keywords.fr]
+    #heading(level: 1, outlined: false)[Mots-clés]
+    #text(size: 0.8em)[#keywords.fr]
 
     #heading(level: 1, outlined: false)[Abstract]
-    #text(size: 0.9em)[#abstracts.en]
+    #text(size: 0.85em)[#abstracts.en]
+    #v(-0.9em)
 
     #heading(level: 1, outlined: false)[Keywords]
-    #text(size: 0.9em)[#keywords.en]
+    #text(size: 0.8em)[#keywords.en]
   ]
 }
 
