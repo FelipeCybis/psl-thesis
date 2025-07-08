@@ -68,7 +68,7 @@
   let make-jury-table = {
     set text(size: 11pt)
     table(
-      columns: (1fr, 0.7fr),
+      columns: (1fr, 0.9fr),
       stroke: none,
       align: (left, right),
       inset: 0cm,
