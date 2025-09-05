@@ -43,27 +43,28 @@
   // Page setup.
   set page(
     background: image("assets/front-bg.jpg"),
-    margin: (left: 2cm, right: 1.5cm, top: 2cm, bottom: 6cm),
+    margin: (left: 2cm, right: 1.5cm, top: 2cm, bottom: 5.5cm),
     footer: [
       #if institute-logo != none {
         align(center)[#institute-logo]
       }
     ],
   )
-  set text(size: 14pt)
+  set text(size: 12pt)
 
   // Institute name.
-  v(5.6cm)
-  block(text(linguify("conducted_at", from: database) + [ #institute], fill: colors.psl), width: 15cm)
+  v(5.5cm)
+  block(text(linguify("conducted_at", from: database) + [ #institute], fill:
+  colors.psl), width: 16cm)
 
   // Thesis title.
-  v(0.8cm)
+  v(0.3cm)
   align(center)[
-    #text([*#title*], size: 16pt)
+    #text([*#title*], size: 14pt)
   ]
 
   // Thesis author, doctoral school, specialty, and jury members.
-  v(0.6cm)
+  v(0.7cm)
 
   let make-jury-table = {
     set text(size: 11pt)
@@ -99,7 +100,7 @@
     [
       #v(0.3cm)
       #text(linguify("presented_by", from: database), fill: colors.psl)\
-      #text([*#author*], size: 16pt)\
+      #text([*#author*], size: 14pt)\
       #date
     ],
     grid.cell(
@@ -111,11 +112,11 @@
     ),
     [
       #text(linguify("doctoral_school", from: database) + [ #doctoral-school.number], fill: colors.psl)\
-      #text([*#doctoral-school.name*], size: 16pt)
+      #text([*#doctoral-school.name*], size: 14pt)
     ],
     [
       #text(linguify("specialty", from: database), fill: colors.psl)\
-      #text([*#specialty*], size: 16pt)
+      #text([*#specialty*], size: 14pt)
     ],
   )
 
